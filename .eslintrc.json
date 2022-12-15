@@ -40,14 +40,14 @@
             "ignoreCase": false,
             "ignoreDeclarationSort": false,
             "ignoreMemberSort": false,
-            "memberSyntaxSortOrder": ["none", "all", "multiple", "single"],
-            "allowSeparatedGroups": false
+            "memberSyntaxSortOrder": ["multiple", "none", "all", "single"],
+            "allowSeparatedGroups": true
           }
         ]
       }
     },
     {
-      "files": ["*.html"],
+      "files": ["*.html", "*spec.ts", "*.scss"],
       "extends": ["plugin:@angular-eslint/template/recommended"],
       "rules": {}
     }
