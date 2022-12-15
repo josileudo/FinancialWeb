@@ -10,12 +10,12 @@
     "lint": "npx eslint 'src/**/*.{js,jsx,ts,tsx,html,css,scss}' --quiet --fix",
     "format": "npx prettier --write 'src/**/*.{js,jsx,ts,tsx,html,css,scss}'",
     "e2e": "ng e2e",
-    "prepare": "husky install",
-    "husky": {
-      "hooks": {
-        "pre-commit": "npm run prepare",
-        "pre-push": "npm run prepare"
-      }
+    "prepare": "npm run lint && npm run format"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run format && npm run lint",
+      "pre-push": "npm run format && npm run lint"
     }
   },
   "private": true,
@@ -47,7 +47,7 @@
     "eslint": "^8.28.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
-    "husky": "^8.0.2",
+    "husky": "^8.0.0",
     "jasmine-core": "~4.5.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.1.0",
